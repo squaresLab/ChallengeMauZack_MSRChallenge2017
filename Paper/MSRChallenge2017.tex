@@ -1,0 +1,984 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[10pt, conference]{IEEEtran}
+% Add the compsocconf option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{balance}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\usepackage[usenames,dvipsnames]{color}
+\newcommand{\todo}[1]
+  {{\scriptsize \textbf{\color{red} {#1}}}}
+
+%\newcommand{\todo}[1] {}
+\newcommand{\clg}[1]
+  {{\scriptsize \textbf{\color{blue} {CLG says: #1}}}}
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+
+\title{Analyzing the Impact of Social Attributes on Commit Integration Success}
+%Or some better name, Zack can probably think of a better one, he is good with names
+%ZC- Haha thanks.  I'm starting to lean to very descriptive titles now.  They
+%are nice for searching.
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Authors hidden for the purposes of double blind review}
+\IEEEauthorblockA{\\
+\\
+\\}
+%\\     
+%}
+%\\      
+%}
+%\\    
+%
+      
+%\author{\IEEEauthorblockN{Authors Name/s per 1st Affiliation (Author)}
+%\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
+%line 2: name of organization, acronyms acceptable\\
+%line 3: City, Country\\
+%line 4: Email: name@xyz.com}
+%\and
+%\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
+%\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
+%line 2: name of organization, acronyms acceptable\\
+%line 3: City, Country\\
+%line 4: Email: name@xyz.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+\author{\IEEEauthorblockN{
+Mauricio Soto, Zack Coker, and
+Claire Le Goues}
+\IEEEauthorblockA{School of Computer Science\\
+Carnegie Mellon University,
+Pittsburgh PA\\ 
+mauriciosoto@cmu.edu, zfc@cs.cmu.edu, clegoues@cs.cmu.edu}
+} 
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+As the software development community makes it easier 
+to contribute to open source projects, the number of commits and pull requests 	
+keep increasing. However, this exciting growth
+renders it more difficult to only accept quality contributions.
+Recent research has found 
+that both technical and social factors predict
+the success of project contributions on GitHub.  
+We take this question a step further, focusing on predicting continuous
+integration build success based on technical and
+social factors involved in a commit.
+Specifically, we investigated if social factors (such as being a
+core member of the development team, having a large number of followers,
+or contributing a large number of commits) improve predictions of build
+success.  We found that social factors cause a noticeable increase
+in predictive power (12\%), core team members are more likely to pass the build
+tests (10\%), and users with 1000 or more followers are more likely to
+pass the build tests (10\%).
+\end{abstract}
+
+\begin{IEEEkeywords}
+Social Attributes; Travis CI; GitHub; Social Networks; Predicting Integration 
+Success; Social Coding
+\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+For managers of an open source project, it is important to ensure that the
+project consists of high quality contributions.  As social coding sites attract
+more users and projects become more popular, they receive ever more
+community contributions.  As the number of project contributions increases,
+the project must dedicate more time to vetting these contributions. 
+%
+The open source
+community has developed various techniques to vet project contributions, such as
+requiring that pull requests be approved by a core team member~\cite{gousios14}. 
+This can become a bottleneck, and thus it is beneficial to prioritize certain
+contributions, ideally by predicted quality.
+
+Ideally, the decision to include code in
+a project is meritocratic, such that only code quality is a factor
+in the decision~\cite{Scacchi07}.
+However, beyond commit complexity or correctness, past
+studies have shown that the social factors describing the committing developer also importantly
+predict contribution success~\cite{tsay14icse, tsay14fse}.
+Thus, both technical factors, which describe the commit's complexity, and
+social factors, which describe the developer's experience, are important when
+investigating contribution success (and thus by extension predicted quality).
+
+This previous work has focused on the predicted acceptance of open source \emph{pull
+requests}~\cite{tsay14icse, tsay14fse} and \emph{continuous integration} builds
+in a single project~\cite{Hassan06,Kwan11,Wolf09}. 
+By contrast,  we are interested in analyzing contribution quality 
+in \emph{continuous integration} across multiple open source projects.  While 
+pull request
+quality is ultimately determined through manual inspection, continuous
+integration uses test cases to automatically assess commit quality,
+and thus may provide different quality predictors. 
+We investigate the factors related to continuous integration build success
+across open source projects.
+In this study, we analyze a large set of technical and social attributes 
+and how these can be used to predict a contribution's quality, measured by the
+success of build integration jobs.
+We performed this analysis on a large corpus of open source projects
+which incorporated continuous integration in their development practice. 
+When a contribution to these projects passes integration tests, 
+it suggests that the project developers
+might have confidence in the changes. 
+Thus, we use the commit's build integration status as a proxy for its quality.
+
+We analyzed contributions in the 
+context of continuous integration using technical factors and one social
+factor from the challenge
+corpus~\cite{msr17challenge}, and social factors from a developer's
+GitHub profile.  We used the technical factors to estimate the commit's
+complexity, and the social factors to estimate the developer's experience.
+Overall, our study investigates how different technical and social factors predict
+contribution quality. This information can help core team members prioritize project
+contributions, and increases understanding of quality enforcement
+in software development.
+
+We find that social factors are an important predictor of build success,
+but do not fully predict whether a contribution will 
+pass all build tests;
+that core team members are more likely to achieve build success than non-core
+members; and that developers with more followers are more likely to submit 
+commits that pass the
+continuous integration build.
+
+
+\section{Research Design}
+
+We present the approach we took to design our study by
+following the Goal-Question-Metric (GQM) methodology~\cite{Basili84}:
+
+\vspace{1ex}
+\noindent\textbf{Goal.}
+The \emph{goal} of this study is to understand the relationship 
+between social factors that describe 
+developer's experience (stars, followers, etc.) and technical properties that
+describe a commit's complexity
+(files added, files modified, etc.)
+when predicting whether a developer's commit
+will pass the continuous integration build tests for the project.
+
+\vspace{1ex}
+\noindent\textbf{Question.}
+%Previous studies have identified a relationship between technical and social 
+%factors and pull request acceptance. 
+We are interested in understanding whether
+social factors, used as a proxy for experience, can be used to predict
+commit integration success. If so, 
+developers and integrators will have another tool to estimate the quality
+of a developer's contribution.
+%
+Our main research question is:
+
+\begin{quotation}
+\noindent\emph{Do social attributes
+improve prediction of a contribution's build success when compared to
+predictions based only on technical attributes?}
+\end{quotation}
+
+If social attributes improve build success predication, we are
+interested in investigating how particular attributes, such as the developer's
+follower count, similarly correlate with success.
+
+\vspace{1ex}
+\noindent\textbf{Metric.} We measured software contribution quality by the
+build status of the
+commit. We used a decision tree classifier~\cite{Quinlan86} to predict build 
+success. Decision trees 
+use binary decisions on the
+attributes to predict a final class. They are well
+established and interpretable. We used a Weka J48 decision tree for readability.
+We first built a
+decision tree classifier using only technical factors to 
+predict build integration
+success.  We then included the social factors, to 
+identify the degree to which social factors improve the model's predictive
+power.
+%We evaluated the models with 10-fold cross-validation. 
+
+\section{Building the Dataset}
+\label{approach}
+
+We built a data set consisting of both technical and social factors:
+
+\vspace{1ex}
+\noindent\textbf{Technical Factors.} We collected technical factors from the 
+Mining Software Repositories (MSR) Challenge data set~\cite{msr17challenge}.
+We extracted the following technical attributes to proxy a commit's
+complexity: 
+\begin{itemize}
+%\item tr\_original\_commit
+%\item gh\_build\_started\_at 
+\item Source churn, changed lines of code.
+\item Files added by this commit.
+\item Files modified by this commit.
+\item Tests added by this commit.
+\item Tests deleted by this commit.
+\item Total source files in project at the time of the commit.
+\item Number of source lines of code in the project at
+	the time of the commit.
+\item Travis status, or status of the Travis build integration.
+\end{itemize}
+
+The first five factors describe the changes in the commit.  The next two
+factors cover the size of the project.  These factors proxy both the commit's complexity,
+and the complexity of the project incorporating it.
+
+\vspace{1ex}
+\noindent\textbf{Social Factors.} We created a web scraper to extract social data
+from developers' profiles.
+We used the commit hash and the project name in the 
+MSR Challenge~\cite{msr17challenge} data set to locate the
+commit web page, leveraging \textit{github.com}'s URL standard for projects and
+commit hashes.
+%  using the syntax
+% below. 
+% \newline \newline
+% \textit{https://github.com/\textbf{NameOfProject}/commit/\textbf{CommitHash}}
+% \newline \newline
+%
+We scraped the commit author's
+\textit{username} from each commit page to
+collect the following from the user's public profile:
+%(\textit{https://github.com/\textbf{UserName}}). 
+%
+
+\begin{itemize}
+	\item Number of repositories the developer can access (including those
+the developer owns, contributes to, or for which they have
+organizational membership access).%
+\footnote{https://developer.github.com/v3/repos/}
+\item  Number of projects the developer has stared. Starring a project
+to shows approval of the repository and creates a bookmark for later 
+access.\footnote{https://help.github.com/articles/about-stars/}
+\item Number of developers that follow the author. 
+\item Number of developers that the author follows.
+\item Number of contributions made in the last year.
+\end{itemize}
+
+We also added one item from the MSR Challenge data set, indicating
+whether the commit's developer is a core member  
+of the associated project.
+These social factors are all tied to a GitHub user's profile,
+and are generally correlated with users' open source engagement.
+Thus, we use them as a proxy for
+experience.  If we were unable to find information about an author, we
+assigned empty values to the commit.
+
+\vspace{1ex}
+\noindent\textbf{Compiling the data sets.} We compiled the gathered data into 
+two data sets: one with only the technical
+factors and the build status, and another with both technical and social
+factors and the build status. We performed this split to analyze how well 
+technical factors alone,
+and then both technical and social
+factors together predict build integration status.
+
+The challenge data set~\cite{msr17challenge} consists
+of commits that date as far back as 2011. The social data we 
+gathered is accurate for January 2017. To mitigate the threat of
+using future results to predict previous events,
+we only include commits from the years 2014--2016.  Our intuition is
+that these social attributes are unlikely to have significant recent changes.
+
+We converted all Travis build statuses to two possible values:
+\emph{successful} (passed in the challenge data set) and \emph{unsuccessful}
+(errored, failed, canceled
+or started in the original data set). We also condensed all passing and
+failing builds in a commit to a single pass or fail for each build status.  If
+the commit contained both passing and failing build statuses, we treat it as
+both a passing and failed build. 
+
+74.43\% of the builds in the reduced data set were successful, and thus a naive
+classifier that always guesses ``successful'' would succeed 74.43\% of the time.
+To penalize misclassification for
+both classes equally, we created a second \emph{balanced} data set by randomly 
+sub-sampling the successful builds until the two build status were
+equal, through a process known as downsampling. We downsampled the entire
+data set and then trained decision tree classifiers on both.  We validated the
+classifiers with cross-validation. Since the cross-validation is stratified, the
+50-50 proportion is maintained through the training and testing folds for the
+downsampled data. We present results for both
+data sets in Section~\ref{sec:successClassification},  and only the full data 
+set in Sections~\ref{sec:core} and \ref{sec:followerSuccess}.
+
+\section{Evaluation} \label{eval}
+\begin{table*}[ht]
+\centering
+\begin{tabular}{l||r|r||r|r}
+  & \multicolumn{2}{|c||}{Non-Downsampled}  & \multicolumn{2}{|c}{Downsampled} \\
+\hline
+  & Technical & Technical and Social & Technical & Technical and Social \\
+\hline
+	\textbf{Correctly Classified Instances}&  285882 (77.01\%) & 301068
+	(81.10\%)  & 121694 (64.10\%) & 144441 (76.09\%)\\
+
+	\textbf{Incorrectly Classified Instances}&  85326 (22.99\%) & 70140
+	(18.90\%) & 68147 (35.90\%) &  45400 (23.91\%)\\
+
+\textbf{Kappa statistic}& 0.21 &  0.42 & 0.28  & 0.52 \\
+\textbf{Average Precision}& 0.75 & 0.80  & 0.65  & 0.76 \\
+\textbf{Average Recall}& 0.77 & 0.81 & 0.64 & 0.76 \\
+\textbf{Average F-Measure}& 0.72 & 0.79  & 0.63  & 0.76 \\
+
+
+
+\textbf{Mean absolute error}& 0.34 &  0.28 & 0.43 & 0.32\\
+
+%\textbf{Relative absolute error}& 88.64\% & 72.42\%  & 85.35\% & 63.07\%\\
+\hline
+\textbf{Increase when adding social attributes}& \multicolumn{2}{|c||}{4.09\%}  & \multicolumn{2}{|c}{11.99\%}\\
+
+\hline
+\end{tabular}
+\\
+\center
+	\caption{\label{resultsTable} Predictive power 
+      decision trees with a non-downsampled data set
+	(2\textsuperscript{nd} and 3\textsuperscript{rd} column) and downsampled
+	(4\textsuperscript{th} and 5\textsuperscript{th} column). 
+	%The higher the percentages represent the higher number of instances we are able to correctly predict. \label{resultsTable}
+	%Zack: the above sentence isn't true for the second row.
+	}   
+\end{table*}
+
+We assess our main research question using decision tree
+classifiers~\cite{Quinlan86}, using
+%
+% to address our main research question: ``Do social attributes, gathered 
+%from the GitHub profiles of developers,
+%allow for more accurate predictions than only using technical data?''
+%   The predicted class is represented as the
+% leaves, while the attribute decisions used in the prediction cause the
+% different branches.
+the Weka J48 decision tree~\cite{Weka,Quinlan1993}
+with default settings and 10-fold 
+cross-validation.
+We present classification
+success rate for technical versus social factors
+(Section~\ref{sec:successClassification}); 
+build success rate of core project members versus non-core 
+members (Section~\ref{sec:core}); and the relationship 
+between follower count and build success (Section~\ref{sec:followerSuccess}).
+
+\subsection{Classification with and without social factors}
+\label{sec:successClassification}
+
+Table~\ref{resultsTable} shows the results of running the two data sets through the
+default Weka J48 decision tree algorithm.  Without downsampling, the 
+decision tree shows an increase of 4.09\% \textit{correctly classified} instances when adding social data. On the downsampled data, the decision tree created from the technical attributes
+had a classification accuracy of 64.10\%, which outperformed the na\"ive
+baseline model that 
+guesses all builds passed (50.00\%).
+After including the social data
+in the data set, the classifier correctly predicted 76.09\% of the data set,
+about a 12\% improvement over the model that uses only the technical data.  These results show that
+while technical data is helpful in predicting build integration success, social
+data can be used to measurably improve predictive accuracy. 
+
+The precision, recall, and
+F-measure are calculated over the successful and unsuccessful classes and then
+averaged (standard in Weka).  All these measures, along with the Kappa
+statistic, increase with social features, which provide evidence that social 
+factors improve build success predictions. The mean 
+absolute error also decreases, further substantiating the result. 
+
+\subsection{Build success by core team member}
+\label{sec:core}
+
+The decision tree results suggested that core team membership is
+important to classifying build success (in supplemental material), and thus 
+we investigated the question
+directly. 
+We classified the build success rate for
+core team members and non-core team members using the data set without 
+downsampling.  We found that core team members
+triggered 89.39\% (331827/371208) of the builds in the data set; 75.58\%
+(250808/331827) of those builds
+passed.  Non-core team members triggered 10.61\% (39381/371208) of the builds 
+in the data set,
+and 64.70\% (25479/39381) of the builds passed.  The difference in success rate
+is statistically significant (the p-value from a Fisher exact
+test is 0.0000), suggesting that it is extremely unlikely to have occurred by
+chance. Thus, in our dataset, core team 
+members are more
+likely to have a successful build integration than non-core team developers, likely
+because core team members are naturally more familiar with the 
+codebase. 
+
+
+
+\subsection{Follower relationship with build success}
+\label{sec:followerSuccess}
+
+We also investigated whether developers with followers were more likely to have a
+successful build integration, since followers could be seen as ``vouching'' for
+a developer's abilities.  We therefore investigated the relationship between
+follower count and build success rate (on the data without 
+downsampling).  We first investigated whether developers with one or more followers
+were more likely to pass the build than those without any followers at all. We
+removed commits without any author profile
+information (20374 builds, reducing the total build count to
+350834). Only 0.87\% (3059/350834) of the
+contributions in the data set were performed by developers with zero 
+followers.  %, leaving 99.13\% (347775/350834) of the contributions 
+%performed by developers with at least one follower.
+Developers with 0 followers had a successful build commit 68.49\% (2095/3059)
+of the time.  Developers with one or more followers were successful 74.78\%
+(260056/347775) of the time.  The p-value of this difference, calculated with a
+Fisher exact test, is 0.000, suggesting the difference in commit success rate between
+developers with no followers and those with at least one follower is
+very unlikely to have occurred by chance.
+%
+By contrast, developers with a large number of followers (1000 or more),
+performed 6.94\% (24347/350834) of the contributions in the 
+data set; their
+contributions had a 78.61\% (19138/24347) success rate. The p-value of the
+difference between this success rate and that of developers with no
+followers is again 0.0000.  % The p-value means that that the difference between
+% developers with 1000 followers and developers with no followers is very unlikely
+% to occur by chance.
+
+These results suggest that developers
+with more followers are more likely to have a successful integration build.
+This may be due to the fact that developers with followers are more likely to
+have open source development experience, and the developers' experience
+influenced their build success.
+
+\section{Threats to Validity}
+\label{sec-threats}
+
+%\paragraph{Internal validity}
+In the study, we use Weka, a well known machine-learning toolkit,
+to analyze our data.
+Like all tools, Weka may contain bugs. 
+Nonetheless, it is a community tested open source tool, which mitigates threats to 
+internal validity. We also release our scripts, data, and decision tree 
+results in the study.\footnote{https://github.com/squaresLab/MSR-challenge-2017}
+
+We mitigate the risk that our results fail to 
+%\paragraph{External validity} 
+generalize externally by studying a broad and rich 
+data set~\cite{msr17challenge} comprising 1,359 popular projects.
+Similarly, the social factors we study may not apply to closed-source
+applications; however, open-source ecosystems are intellectually
+valuable sources of study on their own. 
+%
+ Other concerns include the possibility that social factors
+ have changed significantly in the past three years, that unsuccessful
+ builds are due to
+ incorrect test cases (rather than low quality contributions), and that
+ information is lost in collapsing commits' multiple builds. We believe these
+ are similarly mitigated by a large and varied data set, but leave investigation
+ of the effects of these decisions to future work. 
+ 
+\section{Related work}
+
+The most similar related work to this paper is a case study investigating how
+social and technical factors affect build
+success on a project with 40 developers~\cite{Hassan06}.
+We focus on a wide range of open source projects and
+measure experience through developer profile information.
+Other work has investigated the effects of various factors, such as team
+organization, on predicting build success in a single
+project~\cite{Kwan11,Wolf09}.
+Previous investigations have established relationships between both social and 
+technical 
+attributes and 
+different measures of success, such as pull request acceptance~\cite{gousios14, 
+gousios15,tsay14icse,tsay14fse} or evaluation latency~\cite{Yu15}.
+Tsay et al.~\cite{tsay14icse} 
+show the importance of the social connection between the developer initiating a
+pull request and the project integrators. We look at a broader aspect of 
+social factors, and focus on predicting the Travis CI build success.
+Gousios et al.~\cite{gousios14} found that the commit change location is
+an important indicator to commit acceptance rate and that including
+test cases increases a
+commit's acceptance rate~\cite{gousios15}. We found that number of followers and being a core member are important indicators of build success. 
+Bettenburgh et 
+al.~\cite{bettenburgh10} discuss the impact of social interactions with 
+post-release defects, while Vasilescu et al.~\cite{vasilescu14} explore how different 
+project characteristics (programming language, project age, etc.) affect commit 
+success when integrated into the automatic build process. In our study, we focus on the comparison between similar technical characteristics and social attributes. Yu et al.~\cite{yu16} 
+analyze the impact of CI usage in GitHub and its correlation with software 
+quality, while we focus on gain in predictability of software quality when using CI.
+
+\balance
+\section{Conclusion}
+
+We have analyzed how technical and social factors can be used to
+predict high quality open source contributions, measured by continuous
+integration build success.  We found social factors improve predictions of build 
+success; technical factors led to a 14\% increase in predictive power, and 
+adding social factors led to another 12\% increase. 
+
+Overall, we conclude that social attributes proxying experience, such as whether
+the developer is a core project contributor,
+noticeably influence build success prediction, especially on the downsampled
+data. 
+%These results suggest that social factors
+%are significant predictors when
+%evaluating the predictive power of build commit success.
+%
+In particular, core team members are
+more likely to have the build integration pass than non-core team members.  This
+result provides evidence that non-core team member commits may not be
+scrutinized as closely as core team member commits before the integration build 
+tests,
+although further study is required to draw definitive
+conclusions.
+%
+Likewise, developers with more followers are more
+likely to pass the build.
+Developers with 1000+ followers were more than 10\% more succesful in their
+builds compared to
+developers with no followers.  This suggests that open source developers with
+high quality commits may be more
+likely to have a large number of followers.
+
+Although we find experience is an imperfect indicator, 
+experienced developers appear more likely to make high quality commits.
+
+% conference papers do not normally have an appendix
+
+% use section* for acknowledgement
+\section*{Acknowledgments}
+This material is based upon work supported by the National Science Foundation
+Graduate Research Fellowship under Grant No. DGE-1252522.
+The authors also gratefully acknowledge the partial support
+of the AFRL (AFRL Contract No. FA8750-15-2-0075). Any 
+findings or recommendations are those of the author(s) and do not
+necessarily reflect the views of the sponsoring agencies.
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\end{thebibliography}
+
+ 
+\bibliographystyle{plain}
+\bibliography{MSRChallenge2017}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+
+
+
+% that's all folks
+\end{document}
+
+

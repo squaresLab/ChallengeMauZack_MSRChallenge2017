@@ -1,0 +1,111 @@
+\begin{thebibliography}{10}
+
+\bibitem{Basili84}
+Victor~R Basili and David~M. Weiss.
+\newblock A methodology for collecting valid software engineering data.
+\newblock In {\em Transactions on Software Engineering}, pages 728--738, 1984.
+
+\bibitem{msr17challenge}
+Moritz Beller, Georgios Gousios, and Andy Zaidman.
+\newblock Travis{T}orrent: {S}ynthesizing {T}ravis {CI} and {G}it{H}ub for
+  full-stack research on continuous integration.
+\newblock In {\em Mining Software Repositories}, MSR '17, page (to appear),
+  2017.
+
+\bibitem{bettenburgh10}
+Nicolas Bettenburg and Ahmed~E. Hassan.
+\newblock Studying the impact of social interactions on software quality.
+\newblock In {\em International Conference on Program Comprehension}, ICPC '10,
+  pages 124--133, 2010.
+
+\bibitem{gousios14}
+Georgios Gousios, Martin Pinzger, and Arie~van Deursen.
+\newblock An exploratory study of the pull-based software development model.
+\newblock In {\em International Conference on Software Engineering}, ICSE '14,
+  pages 345--355, 2014.
+
+\bibitem{gousios15}
+Georgios Gousios, Andy Zaidman, Margaret-Anne Storey, and Arie~van Deursen.
+\newblock Work practices and challenges in pull-based development: {T}he
+  integrator’s perspective.
+\newblock In {\em International Conference on Software Engineering}, ICSE '15,
+  pages 358--368, 2015.
+
+\bibitem{Weka}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H. Witten.
+\newblock The {WEKA} data mining software: {A}n update.
+\newblock {\em SIGKDD Explorations Newsletter}, 11(1):10--18, November 2009.
+
+\bibitem{Hassan06}
+Ahmed~E. Hassan and Ken Zhang.
+\newblock Using decision trees to predict the certification result of a build.
+\newblock In {\em Automated Software Engineering}, ASE '06, pages 189--198,
+  2006.
+
+\bibitem{Kwan11}
+Irwin Kwan, Adrian Schroter, and Daniela Damian.
+\newblock Does socio-technical congruence have an effect on software build
+  success? {A} study of coordination in a software project.
+\newblock {\em Transactions on Software Engineering}, 37(3):307--324, May 2011.
+
+\bibitem{Quinlan86}
+J.~R. Quinlan.
+\newblock {I}nduction of decision trees.
+\newblock {\em Machine Learning}, 1(1):81--106, March 1986.
+
+\bibitem{Quinlan1993}
+Ross Quinlan.
+\newblock {\em C4.5: {P}rograms for Machine Learning}.
+\newblock Morgan Kaufmann Publishers, 1993.
+
+\bibitem{Scacchi07}
+Walt Scacchi.
+\newblock Free/{O}pen source software development: {R}ecent research results
+  and emerging opportunities.
+\newblock In {\em Foundations of Software Engineering: Companion Papers}, FSE
+  '07, pages 459--468, 2007.
+
+\bibitem{tsay14icse}
+Jason Tsay, Laura Dabbish, and James Herbsleb.
+\newblock Influence of social and technical factors for evaluating contribution
+  in {G}it{H}ub.
+\newblock In {\em International Conference on Software Engineering}, ICSE '14,
+  pages 356--366, 2014.
+
+\bibitem{tsay14fse}
+Jason Tsay, Laura Dabbish, and James Herbsleb.
+\newblock Let’s talk about it: {E}valuating contributions through discussion
+  in {G}it{H}ub.
+\newblock In {\em Foundations of Software Engineering}, ICSE '14, pages
+  144--154, 2014.
+
+\bibitem{vasilescu14}
+Bogdan Vasilescu, Stef van Schuylenburg, Jules Wulms, Alexander Serebrenik, and
+  Mark G.~J. van~den Brand.
+\newblock Continuous integration in a social-coding world: {E}mpirical evidence
+  from {G}it{H}ub.
+\newblock In {\em International Conference on Software Maintenance and
+  Evolution}, ICSME '14, pages 401--405, 2014.
+
+\bibitem{Wolf09}
+Timo Wolf, Adrian Schroter, Daniela Damian, and Thanh Nguyen.
+\newblock Predicting build failures using social network analysis on developer
+  communication.
+\newblock In {\em International Conference on Software Engineering}, ICSE '09,
+  pages 1--11, 2009.
+
+\bibitem{yu16}
+Yue Yu, Bogdan Vasilescu, Huaimin Wang, Vladimir Filkov, and Premkumar Devanbu.
+\newblock Initial and eventual software quality relating to continuous
+  integration in {G}it{H}ub.
+\newblock {\em Computing Research Repository}, http://arxiv.org/abs/1606.00521,
+  2016.
+
+\bibitem{Yu15}
+Yue Yu, Huaimin Wang, Vladimir Filkov, Premkumar Devanbu, and Bogdan Vasilescu.
+\newblock Wait for it: {D}eterminants of pull request evaluation latency on
+  {G}it{H}ub.
+\newblock In {\em Mining Software Repositories}, MSR '15, pages 367--371, 2015.
+
+\end{thebibliography}
