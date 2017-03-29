@@ -19,5 +19,5 @@ To compute the core team member results:
 
 To compute the foller results:
 1. Convert the arff file to a CSV file (the arff files can be found in 'Scripts and datasets/DecisionTreeesAndData.zip' ); This can be done by removing all information from the @DATA line and above in the file.
-2. Adjust the file name in line 3 of the script testFollowers.py to the correct file to the new csv file.
+2. Adjust the file name in line 2 of the script testFollowers.py to the correct file to the new csv file.
 3. Run the script with python 3. 
